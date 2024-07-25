@@ -157,7 +157,7 @@ graph TD
 
 👉 learning rate scheduler로 CyclicLR을 사용했다. learning rate가 계속 감소하는 것보다 증감을 반복하는 것이 agent의 탐험에 좋을 것이라 예상했다.  
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/487d6eb8-3414-4b60-8e14-c5e5c5694d53/Untitled.png)
+<img width="631" alt="Minemasters_new_2" src="https://github.com/user-attachments/assets/d8100200-9778-42d6-9dc4-9a88a56d6ea7">
 
 👉 get_action
 
@@ -171,20 +171,19 @@ graph TD
 - `random`: `random_list`를 만들어서 닫힌 타일을 선택할 때까지 계속 행동을 고른다.
 - `max q-value`: `max q-value`를 가지는 타일(행동)이 이미 열려 있다면 그 값을 `min q-value`로 설정하고 다음으로 큰 q-value를 고른다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/b010eacf-8623-43bd-b0a7-13f25168bbe6/Untitled.png)
+<img width="1097" alt="Minemasters_new_3" src="https://github.com/user-attachments/assets/ba7d092c-4a01-4774-a63d-f212f03937df">
 
 🧐 기존의 해결책으로도 같은 타일을 계속 누르거나 이미 열린 타일을 누르는 문제를 해결할 수 있었지만, 이것이 agent의 학습에 혼란을 주었다고 생각한다. 
 
 💡 억지로 행동을 바꾸는 것보다, reward를 설정하여 agent로 하여금 반복 행동이 좋지 않다는 것을 알려주는 것이 강화학습의 취지에 적합하다고 생각 → `get_action` 부분의 코드를 아래와 같은 일반적인 코드로 수정했다. `unsqueeze(0)`을 두 번 적용해 state가 net에 들어갈 때의 차원을 맞춰줬다. 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/6a330102-301a-4425-9a38-03bfc46064a4/Untitled.png)
+<img width="635" alt="Minemasters_new_4" src="https://github.com/user-attachments/assets/9bc36c9e-67fc-4b79-9b9e-8e72b5da9ff7">
 
 👉 `train_model`
 
 📚 replay memory
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/47714c0a-fc64-4134-9221-4cc996fcebef/Untitled.png)
-
+<img width="782" alt="Minemasters_new_5" src="https://github.com/user-attachments/assets/7f7cd75a-6dfd-4807-8612-f4c149c321f3">
 - states와 next_states는 CNN의 입력으로 주어져야 한다 → `unsqueeze(1)`을 적용해 (batch_size, 1, 9, 9)로 차원을 맞춰준다.
 - rewards, explodeds, dones: 벨만 최적 방정식 계산 부분에서 차원을 맞춰주기 위해 reshape(-1, 1)을 적용했다.
 - 최종적으로 차원을 정리하면 다음과 같다.
@@ -197,9 +196,8 @@ graph TD
 
 ✏️ 인공신경망 업데이트
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/d39e1f9c-509d-46d9-9e0f-0f3ae3632f3d/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/72bab556-2d40-4e21-ab43-88027627af3d/Untitled.png)
+<img width="378" alt="Minemasters_new_6" src="https://github.com/user-attachments/assets/b70cd841-87f7-4356-9da3-15ed21411c58">
+<img width="637" alt="Minemasters_new_7" src="https://github.com/user-attachments/assets/d95b6513-8879-4cd2-a64e-fab1cdb16862">
 
 ## Main
 
@@ -239,7 +237,7 @@ graph TD
 
 ---
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/b5237145-4891-4830-92e2-c33c3a3045f7/Untitled.png)
+<img width="723" alt="Minemasters_new_12" src="https://github.com/user-attachments/assets/a8284832-1209-4a05-8352-9dd8511b26c6">
 
 Test 시에는 epsilon 이 0.0이라는 점에 유의
 
@@ -259,6 +257,5 @@ Test 시에는 epsilon 이 0.0이라는 점에 유의
 
 ### Test Result
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/cc05538a-4007-484a-ac98-5f1d641212bc/Untitled.png)
-
+<img width="405" alt="Minemasters_new_13" src="https://github.com/user-attachments/assets/1536748b-7832-4e18-a958-57164898d446">
 - Standard Deviation을 구할 때, 승패여부를 저장한 `win_list` 에 대해서 구하면 0과 1 뿐이라는 점에서 0.49 정도로 매우 크게 나오는데 승률에 대한 Standard Deviation으로는 적절하지 않다고 생각. 그래서 100번의 에피소드마다 나온 승률의 Standard Deviation으로 구함
