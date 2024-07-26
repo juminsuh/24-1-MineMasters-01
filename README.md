@@ -86,7 +86,7 @@ graph TD
 🌟 정규화는 안정적인 학습을 위해서 매우 중요하다.
 
 정규화를 하지 않은 결과, score가 음으로 발산하고 학습 속도가 느려졌음
-
+<img width="645" alt="Minemasters_re_1" src="https://github.com/user-attachments/assets/8189fab6-3595-4bba-b832-4470fa979076">
 
 <img width="503" alt="Minemasters_8" src="https://github.com/user-attachments/assets/b8ee8ad6-95bd-4691-82b2-9162f5dcd4c6">
 
@@ -224,19 +224,18 @@ graph TD
 
 - score
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/b09705ff-2848-4b2f-b39e-bce278fdcc1d/Untitled.png)
-
+<img width="697" alt="Minemasters_re_2" src="https://github.com/user-attachments/assets/3c0b79cf-2376-445d-9239-2ca3b1a5c3e8">
 - win rate
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/497b5e41-7898-4807-8858-a62ff208682b/Untitled.png)
+<img width="698" alt="Minemasters_re_3" src="https://github.com/user-attachments/assets/54efff02-6fca-4814-9cc4-989d56cb3849">
 
 - loss average
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/dc678452-aa25-4c3f-a65b-cfe598f18c74/Untitled.png)
+<img width="698" alt="Minemasters_re_4" src="https://github.com/user-attachments/assets/8942103e-4850-4c19-a3aa-2df5ea862f57">
 
 - action average
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d9b82f8a-8780-4270-9b3f-d0ad9032d100/cf4d9103-644a-44e3-81d4-6f650817cb23/Untitled.png)
+<img width="698" alt="Minemasters_re_5" src="https://github.com/user-attachments/assets/3adcaca3-a3c1-4028-a915-0312af954b4b">
 
 ## Test
 
